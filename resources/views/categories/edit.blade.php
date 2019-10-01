@@ -14,11 +14,11 @@ index de categories
         <a href="{{ route('categories.index') }}" class="btn btn-primary">REGRESAR</a>
         <!--<a href="" class="btn btn-primary">AGREGAR</a>-->
 
-        {!! Form::open(['route'=>'categories.store','method'=>'POST']) !!}
+        {!! Form::open(['route'=>['categories.update',$category],'method'=>'PUT']) !!}
 
-            {!!Field::text('name',null,['label'=>'Nombre','placeholder'=>'Ingrese el Nombre']) !!}
+            {!!Field::text('name',$category->name,['label'=>'Nombre','placeholder'=>'Ingrese el Nombre']) !!}
 
-            {!!Field::textarea('description',null,['label'=>'Description','placeholder'=>'Ingrese la Description']) !!}
+            {!!Field::textarea('description',$category->description,['label'=>'Description','placeholder'=>'Ingrese la Description']) !!}
 
             {!!Form::submit('GUARDAR',['class'=>'btn btn-primary']) !!}
 
@@ -31,4 +31,3 @@ index de categories
     </div>
 </div>
 @endsection
-

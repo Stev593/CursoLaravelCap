@@ -18,6 +18,8 @@ class CreateCategoriesTable extends Migration
             $table->string('name',10);
             $table->string('slug',60);
             $table->string('description',200)->nullable();
+            $table->bigInteger('created_user');
+            $table->bigInteger('update_user');
             //$table->bigInteger('created_at');
             //$table->bigInteger('updated_at');
 
